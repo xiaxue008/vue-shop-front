@@ -14,6 +14,7 @@
         <label for="remenberme">记住我</label>
       </div>
       <button :disabled="disablebtn" class="login" @click="login">{{loginText}}</button>
+      <button :disabled="disablebtn" class="zhuce" @click="zhuce">{{zhuceText}}</button>
     </div>
   </div>
 </template>
@@ -28,7 +29,8 @@
         username: "admin",
         password: "123456",
         disablebtn: false,
-        loginText: "登录"
+        loginText: "登录",
+        zhuceText: "注册",
       }
     },
     methods: {
@@ -54,6 +56,9 @@
           vm.disablebtn = false;
           vm.loginText = "登陆";
         })
+      },
+      zhuce(){
+        this.$router.replace('/register');
       }
     }
   }
@@ -123,7 +128,8 @@
     margin: 4px 5px 0 0;
   }
 
-  .login {
+  .login,
+  .zhuce {
     box-sizing: border-box;
     border: none 0;
     height: 44px;
@@ -140,6 +146,9 @@
     margin-top: 15px;
   }
 
+  .zhuce{
+    background-color: red
+  }
   .login:hover {
     background: #2668b5;
   }

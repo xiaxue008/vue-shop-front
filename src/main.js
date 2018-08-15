@@ -18,8 +18,11 @@ import './Lib/mui/css/icons-extra.css'
 
 //引入mint-ui
 import 'mint-ui/lib/style.css'
-import MintUI from 'mint-ui'
-Vue.use(MintUI)
+import {Header,Swipe,SwipeItem,Button} from 'mint-ui'
+Vue.component(Header.name,Header);
+Vue.component(Swipe.name,Swipe);
+Vue.component(SwipeItem.name,SwipeItem);
+Vue.component(Button.name,Button);
 
 //定义时间过滤器
 import moment from 'moment'
