@@ -10,6 +10,7 @@ import SettingCompont from './../components/tabbar/Setting.vue'
 import NewsListCompont from './../components/news/newslist.vue'
 import RegisterCompont from './../components/register.vue'
 import NewsInfoCompont from './../components/news/newsinfo.vue'
+import PhotoListCompont from './../components/photos/photoList.vue'
 
 Vue.use(Router)
 
@@ -45,6 +46,9 @@ var homeRouter = {
     }, {
       path: 'newslist/:id',
       component: NewsInfoCompont
+    }, {
+      path: 'photolist',
+      component: PhotoListCompont
     }
   ]
 };

@@ -13,16 +13,13 @@ axios.defaults.baseURL = "http://localhost:3000";
 Vue.prototype.$reqs = axios;
 
 //引入mui的字体和样式
-import './Lib/mui/css/mui.min.css'
+import './Lib/mui/css/mui.css'
 import './Lib/mui/css/icons-extra.css'
 
 //引入mint-ui
 import 'mint-ui/lib/style.css'
-import {Header,Swipe,SwipeItem,Button} from 'mint-ui'
-Vue.component(Header.name,Header);
-Vue.component(Swipe.name,Swipe);
-Vue.component(SwipeItem.name,SwipeItem);
-Vue.component(Button.name,Button);
+import MintUI from 'mint-ui'
+Vue.use(MintUI)
 
 //定义时间过滤器
 import moment from 'moment'

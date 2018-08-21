@@ -60,7 +60,7 @@
       zhuce(){
         this.$router.replace('/register');
       }
-    }
+    } 
   }
 
 </script>
