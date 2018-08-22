@@ -1,5 +1,5 @@
 <template>
-    <button @click="backtoLogin">退出登录</button>
+  <button @click="backtoLogin">退出登录</button>
 </template>
 
 <script>
@@ -9,8 +9,8 @@ export default {
   },
   methods: {
     backtoLogin() {
-        console.log(this.$router)
-      this.$router.replace('/login')
+      console.log(this.$router);
+      this.$router.replace("/login");
     }
   }
 };

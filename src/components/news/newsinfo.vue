@@ -1,22 +1,22 @@
 <template>
-    <div class="newsinfo-content">
-        <h3 class="title">{{newsinfo.title}}</h3>
-        <p class="subtitle">
-            <span>发表时间：{{newsinfo.addTime | dataFormat}}</span>
-            <span>点击：{{newsinfo.click}}</span>
-        </p>
-        <hr>
-        <div class="content" v-html="newsinfo.content">
+  <div class="newsinfo-content">
+    <h3 class="title">{{newsinfo.title}}</h3>
+    <p class="subtitle">
+      <span>发表时间：{{newsinfo.addTime | dataFormat}}</span>
+      <span>点击：{{newsinfo.click}}</span>
+    </p>
+    <hr>
+    <div class="content" v-html="newsinfo.content">
 
-        </div>
-
-        <comment-box :id="this.id"></comment-box>
     </div>
+
+    <comment-box :id="this.id"></comment-box>
+  </div>
 </template>
 
 <script>
 //导入子组建
-import comments from './../subcomponts/comment'
+import comments from "./../subcomponts/comment";
 
 export default {
   data() {
@@ -41,8 +41,8 @@ export default {
         });
     }
   },
-  components:{
-      'comment-box':comments
+  components: {
+    "comment-box": comments
   }
 };
 </script>

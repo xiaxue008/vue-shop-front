@@ -13,10 +13,9 @@
       </mt-swipe-item>
     </mt-swipe>
 
-
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
-        <router-link to="/home/newslist"> 
+        <router-link to="/home/newslist">
           <span class="mui-icon-extra mui-icon-extra-topic"></span>
           <div class="mui-media-body">新闻资讯</div>
         </router-link>
@@ -56,48 +55,46 @@
 </template>
 
 <script>
-  export default {
-    data: function () {
-      return {};
-    },
-    created: function () {
-      this.getLunbo();
-    },
-    methods: {
-      getLunbo: function () {
-        console.log(123);
-      }
+export default {
+  data: function() {
+    return {};
+  },
+  created: function() {
+    this.getLunbo();
+  },
+  methods: {
+    getLunbo: function() {
+      console.log(123);
     }
-  };
-
+  }
+};
 </script>
 
 <style scoped>
-  .mint-swipe {
-    height: 200px;
-  }
+.mint-swipe {
+  height: 200px;
+}
 
-  .mint-swipe img {
-    width: 100%;
-    height: 100%;
-  }
+.mint-swipe img {
+  width: 100%;
+  height: 100%;
+}
 
-  .mui-grid-view.mui-grid-9 {
-    background-color: white;
-    border: none;
-  }
+.mui-grid-view.mui-grid-9 {
+  background-color: white;
+  border: none;
+}
 
-  .mui-icon-extra{
-      width: 40px;
-      height: 40px;
-  }
+.mui-icon-extra {
+  width: 40px;
+  height: 40px;
+}
 
-  .mui-grid-view.mui-grid-9.mui-media-body {
-    font-size: 13px;
-  }
+.mui-grid-view.mui-grid-9.mui-media-body {
+  font-size: 13px;
+}
 
-  .mui-grid-view.mui-grid-9 .mui-table-view-cell {
-    border: none
-  }
-
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+  border: none;
+}
 </style>
