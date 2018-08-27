@@ -11,7 +11,9 @@ import NewsListCompont from './../components/news/newslist.vue'
 import RegisterCompont from './../components/register.vue'
 import NewsInfoCompont from './../components/news/newsinfo.vue'
 import PhotoListCompont from './../components/photos/photoList.vue'
-
+import PhotoInfoCompont from './../components/photos/photoinfo.vue'
+import GoodsListCompont from './../components/goods/goodslist.vue'
+import GoodsInfoCompont from './../components/goods/goodsinfo.vue'
 Vue.use(Router)
 
 var homeRouter = {
@@ -49,6 +51,16 @@ var homeRouter = {
     }, {
       path: 'photolist',
       component: PhotoListCompont
+    }, {
+      path: 'photoInfo/:id',
+      component: PhotoInfoCompont
+    },{
+      path:'goodslist',
+      component:GoodsListCompont
+    },{
+      path:'goodsInfo/:id',
+      component:GoodsInfoCompont,
+      name:'goodsinfo'
     }
   ]
 };

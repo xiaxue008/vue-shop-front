@@ -11,17 +11,17 @@
     </div>
 
     <ul class="photo-list">
-      <li v-for="item in items" :key="item.id">
+      <router-link v-for="item in items" :key="item.id" :to="'/home/photoInfo/'+item.id" tag="li">
         <img v-lazy="item.imgurl">
         <div class="info">
           <h1 class="infotitle">{{item.title}}</h1>
           <div class="infobody">{{item.zhaiyao}}</div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
-// 开发遇到的坑，第一步 加载mui不能使用严格模式，需要在babelrc中加入控制语句！ 第二步  滑动的时候会报错 使用默认action 使用css控制语句
+// 坑，第一步 加载mui不能使用严格模式，需要在babelrc中加入控制语句！ 第二步  滑动的时候会报错 使用默认action 使用css控制语句
 // 第三步 tab标签会不能使用，因为tabbar的样式冲突  修改tabbar的样式即可
 <script>
 //初始化滑动控件

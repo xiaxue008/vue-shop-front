@@ -27,6 +27,11 @@ Vue.filter('dataFormat', function (dataStr, pattern = "YYYY-MM-DD") {
   return moment(dataStr).format(pattern)
 })
 
+
+//导入缩略图插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
