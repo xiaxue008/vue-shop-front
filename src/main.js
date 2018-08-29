@@ -32,6 +32,65 @@ Vue.filter('dataFormat', function (dataStr, pattern = "YYYY-MM-DD") {
 import VuePreview from 'vue-preview'
 Vue.use(VuePreview);
 
+
+//导入vuex
+import Vuex from 'vuex'
+Vue.use(Vuex);
+var car = JSON.parse(localStorage.getItem('car') || '[]');
+var store = new Vuex.Store({
+  state: {
+    car: car //将购物车商品数据用数组存
+  }, //将state想象成组件中的打他，用来存储数据
+  mutations: { //想象成组建中的methods
+    addToCar(state, goodsinfo) {
+      //点击加入购物车，保存数据到car上
+      //如果购物车已经有这个商品了 只需要改变数量
+      var flag = false;
+      state.car.some(item => {
+        if (item.id == goodsinfo.id) {
+          item.count += parseInt(goodsinfo.count);
+          flag = true;
+          return true
+        }
+      })
+      //如果没有则直接把goodsinfo放入数组中
+      if (!flag) {
+        state.car.push(goodsinfo);
+      }
+      //当更新car之后，把数组存储到localstorage中
+      localStorage.setItem('car', JSON.stringify(state.car));
+    },
+    updategoodsinfo(state, goodsinfo) {
+      //修改购物车里的商品数量
+      state.car.some(item => {
+        if (item.id == goodsinfo.id) {
+          item.count = parseInt(goodsinfo.count);
+          return true
+        }
+      });
+
+      localStorage.setItem('car', JSON.stringify(state.car));
+    }
+  },
+  getters: {
+    getAllCount(state) {
+      var c = 0;
+      state.car.forEach(item => {
+        c += item.count;
+      });
+      return c;
+    },
+    getgoodscount(state) {
+      var o = {};
+      state.car.forEach(item => {
+        o[item.id] = item.count
+      });
+      return o;
+    }
+  }
+})
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -39,5 +98,6 @@ new Vue({
   components: {
     App
   },
-  template: '<App/>'
+  template: '<App/>',
+  store: store
 })

@@ -37,6 +37,12 @@ export default {
     this.getPhotoInfo();
     this.getPhoto();
   },
+  // mounted() {
+  //   var img = document.querySelectorAll(".my-gallery img");
+  //   img.forEach(function(item,index){
+  //     item.style.width="200px"
+  //   })
+  // },
   methods: {
     getPhotoInfo() {
       var vm = this;
@@ -78,6 +84,9 @@ export default {
   text-align: center;
   margin: 15px 0;
 }
+.my-gallery {
+  width: 200px;
+}
 
 .subtitle {
   display: flex;
@@ -90,8 +99,7 @@ export default {
   line-height: 30px;
   text-align: left;
 }
-
-img{
-  width: 200px !important;
+img[itemprop="thumbnail"] {
+  width: 200px;
 }
 </style>
