@@ -11,6 +11,34 @@ import axios from 'axios'
 axios.defaults.withCredentials = true; //跨域保存session有用
 axios.defaults.baseURL = "http://localhost:3000";
 Vue.prototype.$reqs = axios;
+//==============================================axios拦截器
+axios.interceptors.request.use(
+  config => {
+    if (config.url === "/users/login") {
+      return config
+    } else {
+      var token = sessionStorage.getItem('token');
+      config.headers.xtoken=token;
+      return config
+    }
+  }
+);
+axios.interceptors.response.use(
+  response => {
+    return response;
+  },
+  err => {
+    if (err.response) {
+      router.replace({
+        path: 'login',
+        query: {
+          redirect: router.currentRoute.fullPath
+        }
+      })
+
+    }
+  }
+)
 
 //引入mui的字体和样式
 import './Lib/mui/css/mui.css'

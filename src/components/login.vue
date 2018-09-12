@@ -43,6 +43,9 @@ export default {
         })
         .then(function(res) {
           if (res.data.status === true) {
+            //登陆成功
+            var token=res.data.token;
+            sessionStorage.setItem("token",token);
             vm.$router.replace("/home");
           } else {
             //弹窗

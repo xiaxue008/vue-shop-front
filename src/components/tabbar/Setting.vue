@@ -9,7 +9,6 @@ export default {
   },
   methods: {
     backtoLogin() {
-      console.log(this.$router);
       this.$router.replace("/login");
     }
   }
